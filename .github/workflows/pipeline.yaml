@@ -7,3 +7,6 @@ jobs:
   noop:
     name: Noop step
     runs-on: ubuntu-latest
+    steps:
+    - name: No operation
+      run: echo "This is a noop step."
