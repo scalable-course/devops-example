@@ -1,0 +1,9 @@
+name: Example CI Pipeline
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  noop:
+    name: Noop step
+    runs-on: ubuntu-latest
