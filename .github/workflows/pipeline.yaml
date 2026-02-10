@@ -16,8 +16,14 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v6
+    - name: Log in to the Container registry
+      uses: docker/login-action@v3
+      with:
+        registry: https://ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
     - name: Build Docker image
       uses: docker/build-push-action@v6
       with:
-        tags: scalable-course/fastapi-example:latest
-        push: false
+        tags: ghcr.io/scalable-course/fastapi-example:latest
+        push: true
