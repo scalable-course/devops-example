@@ -28,5 +28,5 @@ jobs:
     - name: Build Docker image
       uses: docker/build-push-action@v6
       with:
-        tags: ghcr.io/scalable-course/fastapi-example:latest
+        tags: ghcr.io/scalable-course/fastapi-example:${{ github.sha }}
         push: true
